@@ -13,7 +13,7 @@ app = Flask(__name__)
 #Method will automatically execute when our endpoint receives a POST call
 @app.route('/', methods=['POST'])
 def msg_received_from_group():
-
+  send_msg("we are")	
   #Format the data we receive as a JSON
   data = request.get_json()
   log('{}'.format(data))
