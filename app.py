@@ -13,7 +13,7 @@ app = Flask(__name__)
 #Method will automatically execute when our endpoint receives a POST call
 @app.route('/', methods=['POST'])
 def msg_received_from_group():
-  send_msg("we are")	
+  send_msg("blah blah blah")	
   #Format the data we receive as a JSON
   data = request.get_json()
   log('{}'.format(data))
@@ -22,7 +22,8 @@ def msg_received_from_group():
   if data['text'].lower() == "!test":
     send_msg("Hello World!")
 	
-
+  if "a" in data['text'].lower():
+    send_msg("🙄")
   elif data['text'].lower() == "!testpic":
     send_msg_pic("Hello World!","https://i.groupme.com/1024x1024.jpeg.d733d6de5c36462f8d1cb67e3191b618")
 	
